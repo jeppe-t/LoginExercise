@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<div style="text-align: center;">
+    <body>
+
+    <hr>
+    <h1 style="color:darkblue">Welcome to the login form</h1>
+    <h2>Please fill in your login info</h2>
+    <br>
+
+
+    <form method="post" th:action="@{/login}">
+
+        Username:<br>
+        <input type="text" th:name="username">
+        <br>
+
+        Password:<br> <input type="password" th:name="password">
+
+        <br>
+        <br>
+        <input type = "submit" value = "Submit"/>
+        <br>
+        <br>
+        <br>
+        <a href="/register">Click here to create user</a>
+        <br>
+        <hr>
+    </form>
+
+    Is Session empty?<th:block th:text="${session.isEmpty()}?'Yes':'No'"></th:block>
+
+    </body>
+</div>
+</html>
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<center>
+<body>
+
+<hr>
+<h1>Welcome to the login form</h1>
+<h2>Please fill in your login info</h2>
+<br>
+
+<form action="#" autocomplete="on" th:action="@{/login}" method="post" th:object="${user}" >
+    <label>Username: </label>
+<br>
+    <input type="text" th:field="*{userName}">
+<br>
+    <label>Password: </label>
+<br>
+    <input type="text" th:field="*{password}">
+<br>
+<br>
+    <button type="submit">Login</button>
+<br>
+<br>
+
+    <a href="/register">Click here to create user</a>
+
+</form>
+<br>
+<hr>
+
+</body>
+</center>
+</html>
+
+-->
