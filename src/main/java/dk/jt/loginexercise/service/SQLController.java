@@ -17,7 +17,7 @@ public class SQLController {
     private ResultSet rs;
     private boolean bol;
     private ArrayList<User> resultList = new ArrayList<>();
-    private ArrayList<User> userList = getResults(scriptRecieve("select * from login.users"));
+    private ArrayList<User> userList = getResults(scriptRecieve("select * from users"));
 
 
 
@@ -70,11 +70,11 @@ public class SQLController {
     //Database insert and receive-------------------------------------------------------------------------------------//
 
     public String createUserRequest(User user){
-        scriptCommand("insert into login.users(first_name, last_name, adress, phone, username, password ) " +
+        scriptCommand("insert into users(first_name, last_name, adress, phone, username, password ) " +
                 "values(" + "\"" + user.getFirst_name() + "\", \"" + user.getLast_name()+ "\", \"" + user.getAdress()+
                 "\", \"" + user.getPhone() + "\", \"" + user.getUserName() +  "\", \"" + user.getPassword() + "\")");
 
-        userList = getResults(scriptRecieve("select * from login.users"));
+        userList = getResults(scriptRecieve("select * from users"));
 
         return "register_success";
 

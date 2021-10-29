@@ -1,5 +1,3 @@
-create schema IF NOT EXISTS login;
-use login;
 drop table IF EXISTS users;
 
 CREATE TABLE users(
